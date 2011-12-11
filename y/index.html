@@ -4,6 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <script src="jquery/jquery-latest.js"></script>
 <script src="jquery/jquery.tablesorter.js"></script>
+<script src="jquery/jquery.metadata.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
   $(document).ready(function(){ 
     $("#maintable").tablesorter();
@@ -12,13 +13,13 @@
 
 </head>
 <body>
-<table id="maintable" class="tablesorter">
+<table id="maintable" class="tablesorter {sortlist: [[0,0]]}" >
    <thead>
      <tr><th>No</th><th>Score</th></tr>
    </thead>
    <tbody>
-     <tr><td>1</td><td>70</td></tr>
      <tr><td>2</td><td>98</td></tr>
+	 <tr><td>1</td><td>70</td></tr>
      <tr><td>3</td><td>84</td></tr>
    </tbody>
 </table>
