@@ -6,21 +6,43 @@
 <script src="jquery/jquery.tablesorter.js"></script>
 <script src="jquery/jquery.metadata.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
+var myTextExtraction = function(node) {
+//  var value = node.getAttribute("input:value");
+//	var value = undefined;
+//	if (node.childNodes.length > 1) {
+//		value = node.childNodes[1].value
+//	}
+//	else {
+//		value = node.innerHTML
+//	}
+//	return value;
+return $('input',node).val();
+}
+
   $(document).ready(function(){ 
-    $("#maintable").tablesorter();
+    $("#maintable").tablesorter({
+		sortList: [[0,0]],
+		sortForce: [[0,0]],
+		textExtraction: myTextExtraction
+		});
   }); 
 </script>
 
 </head>
 <body>
-<table id="maintable" class="tablesorter {sortlist: [[0,0]]}" >
-   <thead>
+<table id="maintable" class="tablesorter">
+<!--   <thead>
      <tr><th>No</th><th>Score</th></tr>
    </thead>
+-->
    <tbody>
-     <tr><td>2</td><td>98</td></tr>
-	 <tr><td>1</td><td>70</td></tr>
-     <tr><td>3</td><td>84</td></tr>
+     <tr><td>
+	 		<input id="textBox1" type=text value="2"></input>
+		</td>
+		<td>98</td>
+	 </tr>
+	 <tr><td><input id="textBox2" type=text value="1"></input></td><td>70</td></tr>
+     <tr><td><input id="textBox3" type=text value="3"></input></td><td>84</td></tr>
    </tbody>
 </table>
 </body>
